@@ -1,0 +1,61 @@
+# Draft control registry; design-only, no verified controls.
+schema_version: 1
+decision: "009-D"
+project: ZeroCloud
+fictional_corporation: true
+controls:
+  - id: ZC-IAM-001
+    title: Privileged access MFA
+    domain: identity
+    status: proposed
+    verification: synthetic privileged authentication challenge and bypass-denial tests
+  - id: ZC-IAM-002
+    title: Service credential rotation
+    domain: identity
+    status: proposed
+    verification: rotate, revoke and confirm old credential rejection
+  - id: ZC-NET-001
+    title: Default-deny trust boundaries
+    domain: network
+    status: proposed
+    verification: positive and negative connectivity matrix with packet capture
+  - id: ZC-NET-002
+    title: Worker lateral-movement restrictions
+    domain: network
+    status: proposed
+    verification: denied cross-worker and cross-namespace traffic tests under verified CNI
+  - id: ZC-HOST-001
+    title: Linux host baseline
+    domain: host
+    status: proposed
+    verification: repeatable hardening configuration audit and reboot test
+  - id: ZC-K8S-001
+    title: Restricted workload admission
+    domain: kubernetes
+    status: proposed
+    verification: privileged and host-mounted pod manifests rejected
+  - id: ZC-LOG-001
+    title: Security event collection
+    domain: telemetry
+    status: proposed
+    verification: synthetic event arrives with integrity and timestamp metadata
+  - id: ZC-DET-001
+    title: Suspicious authentication detection
+    domain: detection
+    status: proposed
+    verification: synthetic event replay triggers expected alert and clean events do not
+  - id: ZC-SUP-001
+    title: Software provenance
+    domain: supply_chain
+    status: proposed
+    verification: inspect SBOM and reject unapproved dependency fixture
+  - id: ZC-IR-001
+    title: Incident response tabletop
+    domain: incident_response
+    status: proposed
+    verification: documented tabletop exercise with evidence and follow-up actions
+  - id: ZC-REC-001
+    title: Backup restoration
+    domain: recovery
+    status: proposed
+    verification: isolated restore and integrity comparison
