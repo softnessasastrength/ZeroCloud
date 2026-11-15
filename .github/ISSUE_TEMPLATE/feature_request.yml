@@ -1,0 +1,51 @@
+name: Feature request
+description: Propose a change to the miniature cloud, its documentation, or ClankerWorks.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals are welcome; unexamined proposals are paperwork. State the
+        problem first, then the proposal, then how anyone will know it worked.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing, hard, or impossible today — observed, not hypothetical, where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: The smallest coherent version of the change.
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Roadmap stage
+      description: The roadmap stage this belongs to, if any.
+      options:
+        - "Stage 0: Source of truth"
+        - "Stage 1: Hardware research"
+        - "Stage 2: Three-node pilot"
+        - "Stage 3: Miniature cloud services"
+        - "Stage 4: Expand and publish"
+        - "Not stage-bound (tooling, docs, ClankerWorks)"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How completion will be verified — tests, measurements, or documents — and which state it reaches (proposed, implemented, locally tested, CI verified, deployed).
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Fiction boundary
+      options:
+        - label: If this touches ClankerWorks or ZCR finances, it stays fictional and synthetic — no real accounts, payments, or communications.
+          required: false

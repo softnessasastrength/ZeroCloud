@@ -1,0 +1,31 @@
+name: Documentation
+description: Report a documentation gap, error, or standards issue.
+title: "[Docs]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Documentation is the source of truth at Stage 0, which makes its
+        errors load-bearing. Point at the exact file and line of thinking.
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: File and section, or "missing" if the document does not exist yet.
+      placeholder: "e.g. ROADMAP.md, Stage 1 — or: missing"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing
+      description: Include any claim that is stated without evidence, or any state label (proposed / implemented / locally tested / CI verified / deployed) that is wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested change
+      description: The corrected or additional text, or at least its shape.
+    validations:
+      required: false
